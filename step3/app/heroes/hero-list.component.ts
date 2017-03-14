@@ -2,7 +2,7 @@
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, NavigationExtras } from '@angular/router';
 import { Hero, HeroService }  from './hero.service';
 @Component({
   template: `
@@ -34,6 +34,11 @@ export class HeroListComponent implements OnInit {
   }
   isSelected(hero: Hero) { return hero.id === this.selectedId; }
   onSelect(hero: Hero) {
-    this.router.navigate(['/hero', hero.id]);
+    let sessionId = 1;
+    let navigationExtras : NavigationExtras = {
+      queryParams: {'session_id': sessionId},
+      fragment: 'anchor'
+    }
+    this.router.navigate(['/hero', hero.id], navigationExtras);
   }
 }
