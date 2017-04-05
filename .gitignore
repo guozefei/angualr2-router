@@ -9,7 +9,5 @@ images/*
 npm-debug.log
 .code_swarm/log.xml
 .code_swarm/project.config
-src/*.bundle.js
-src/*.png
-src/*.gif
 src/*.jpg
+*.bundle.js

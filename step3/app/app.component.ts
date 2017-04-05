@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       </svg>
     </i>
     <nav>
-      <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+      <a routerLink="/crisis-center" routerLinkActive="active active2">Crisis Center</a>
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
     </nav>
     <router-outlet></router-outlet>
