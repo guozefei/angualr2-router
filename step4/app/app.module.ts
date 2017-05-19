@@ -5,6 +5,7 @@ import { AppComponent }     from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule }     from './heroes/heroes.module';
 import { CrisisCenterModule }   from './crisis-center/crisis-center.module';
+import { ComposeMessageComponent } from './compose-message.component';
 import { PageNotFoundComponent } from './not-found.component';
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { PageNotFoundComponent } from './not-found.component';
   ],
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ComposeMessageComponent
   ],
   bootstrap: [ AppComponent ]
 })
