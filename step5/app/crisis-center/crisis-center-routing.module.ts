@@ -13,6 +13,7 @@ const crisisCenterRoutes: Routes = [
     children: [
       {
         path: '',
+        canActivate: [AuthGuard],
         component: CrisisListComponent,
       },
       {
