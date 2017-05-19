@@ -4,6 +4,7 @@ import { CrisisListComponent }    from './crisis-list.component';
 import { CrisisDetailComponent }  from './crisis-detail.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisCenterComponent } from './crisis-center.component';
+import { AuthGuard } from '../auth-guard.service';
 const crisisCenterRoutes: Routes = [
   {
     path: 'crisis-center',
@@ -15,6 +16,7 @@ const crisisCenterRoutes: Routes = [
       },
       {
         path: ':id',
+        canActivate: [AuthGuard],
         component: CrisisDetailComponent
       },
       {
