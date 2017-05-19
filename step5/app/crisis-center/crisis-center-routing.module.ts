@@ -12,16 +12,14 @@ const crisisCenterRoutes: Routes = [
       {
         path: '',
         component: CrisisListComponent,
-        children: [
-          {
-            path: ':id',
-            component: CrisisDetailComponent
-          },
-          {
-            path: '',
-            component: CrisisCenterHomeComponent
-          }
-        ]
+      },
+      {
+        path: ':id',
+        component: CrisisDetailComponent
+      },
+      {
+        path: 'xx',
+        component: CrisisCenterHomeComponent
       }
     ]
   }
@@ -34,4 +32,4 @@ const crisisCenterRoutes: Routes = [
     RouterModule
   ]
 })
-export class CrisisRoutingModule { }
+export class CrisisCenterRoutingModule { }

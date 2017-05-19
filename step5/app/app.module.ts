@@ -1,35 +1,30 @@
 import { NgModule }       from '@angular/core';
-import { CommonModule }   from '@angular/common';
+import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-
-import { AppComponent }            from './app.component';
-import { PageNotFoundComponent }   from './not-found.component';
-
-import { AppRoutingModule }        from './app-routing.module';
-import { HeroesModule }            from './heroes/heroes.module';
-import { CrisisCenterModule }      from './crisis-center/crisis-center.module';
-import { AdminModule }             from './admin/admin.module';
-import {
-  AuthService
-} from './auth.service';
-import { AuthGuard } from './auth-guard.service';
-
+import { AppComponent }     from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeroesModule }     from './heroes/heroes.module';
+import { CrisisCenterModule }   from './crisis-center/crisis-center.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { PageNotFoundComponent } from './not-found.component';
+import {AuthGuard} from './auth-guard.service';
+import {CanDeactivateGuard} from './deactive-guard.service';
 @NgModule({
   imports: [
-    CommonModule,
+    BrowserModule,
     FormsModule,
     HeroesModule,
-    // CrisisCenterModule,
-    // AdminModule,
-    // AppRoutingModule
+    CrisisCenterModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ComposeMessageComponent
   ],
   providers: [
-    AuthService,
-    AuthGuard
+    AuthGuard,
+    CanDeactivateGuard
   ],
   bootstrap: [ AppComponent ]
 })
