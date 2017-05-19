@@ -5,6 +5,7 @@ import { CrisisDetailComponent }  from './crisis-detail.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 import { AuthGuard } from '../auth-guard.service';
+import { CrisisDetailResolver }   from './crisis-detail-resolver.service';
 const crisisCenterRoutes: Routes = [
   {
     path: 'crisis-center',
@@ -17,6 +18,9 @@ const crisisCenterRoutes: Routes = [
       {
         path: ':id',
         canActivate: [AuthGuard],
+        resolve: {
+            crisis: CrisisDetailResolver
+        },
         component: CrisisDetailComponent
       },
       {
@@ -32,6 +36,9 @@ const crisisCenterRoutes: Routes = [
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    CrisisDetailResolver
   ]
 })
 export class CrisisCenterRoutingModule { }

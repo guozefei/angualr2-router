@@ -26,11 +26,11 @@ export class CrisisDetailComponent implements OnInit {
     private service: CrisisService
   ) {}
   ngOnInit() {
-    this.route.params
-      // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.service.getCrisis(+params['id']))
-      .subscribe((crisis: Crisis) => this.crisis = crisis);
-  }
+  this.route.data
+    .subscribe((data: { crisis: any }) => {
+      this.crisis = data.crisis;
+    });
+}
   gotoCrises() {
     let crisisId = this.crisis ? this.crisis.id : null;
     // Pass along the hero id if available
