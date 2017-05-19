@@ -19,9 +19,9 @@ import { AuthGuard } from './auth-guard.service';
     CommonModule,
     FormsModule,
     HeroesModule,
-    CrisisCenterModule,
-    AdminModule,
-    AppRoutingModule
+    // CrisisCenterModule,
+    // AdminModule,
+    // AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -33,4 +33,4 @@ import { AuthGuard } from './auth-guard.service';
   ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export default class AppModule { }
